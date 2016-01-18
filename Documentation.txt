@@ -1,0 +1,54 @@
+CMPT 332 - Winter 2016
+Assignment 4, Questions 1,2
+
+Jordaen Graham - jhg257
+
+File: Documentation.txt
+========================================
+Files included:
+
+Makefile
+
+tcp.c
+    Connection methods to reduce duplicating code in each file
+
+proxy.c
+    Proxy server that redirects request to the main server
+
+server.c
+    Main server that contains the list if keys and values
+
+server.h
+  Header file for the server.
+  
+============
+What is working:
+
+What is not working:
+
+
+============
+Test results:
+
+
+
+
+Here's a dinosaur for your marking enjoyment:
+
+                                 .       .
+                                / `.   .' \
+                        .---.  <    > <    >  .---.
+                        |    \  \ - ~ ~ - /  /    |
+                         ~-..-~             ~-..-~
+                     \~~~\.'                    `./~~~/
+           .-~~^-.    \__/                        \__/
+         .'  O    \     /               /       \  \
+        (_____,    `._.'               |         }  \/~~~/
+         `----.          /       }     |        /    \__/
+               `-.      |       /      |       /      `. ,~~|
+                   ~-.__|      /_ - ~ ^|      /- _      `..-'   f: f:
+                        |     /        |     /     ~-.     `-. _||_||_
+                        |_____|        |_____|         ~ - . _ _ _ _ _>
+
+                         
+  
