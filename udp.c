@@ -89,6 +89,10 @@ int main(void)
     buf[numbytes] = '\0';
     printf("listener: packet contains \"%s\"\n", buf);
 
+
+    // Do something with buf
+
+
     close(sockfd);
 
     return 0;
