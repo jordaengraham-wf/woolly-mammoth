@@ -1,5 +1,5 @@
 # CMPT 434 - Winter 2016
-# Assignment 1, Question 1
+# Assignment 1, Question 3
 #
 # Jordaen Graham - jhg257
 #
@@ -8,35 +8,23 @@
 CC := gcc
 CCFLAGS := -Wall -Wextra -pedantic -pthread -g
 
-all: clean Server Proxy
+all: clean UDP Client
 
 clean:
 	@rm *.o* &> /dev/null || true
 	@rm *~ &> /dev/null || true
-	@rm Proxy &> /dev/null || true
-	@rm Server &> /dev/null || true
+	@rm Client &> /dev/null || true
+	@rm UDP &> /dev/null || true
 
-run_server: Server
-	./Server
-
-run_proxy: Proxy
-	./Proxy localhost 30490
+RUN: UDP Client
+	./UDP &
+	./Client localhost test
 
 run_udp: UDP
 	./UDP
 
 run_client: Client
 	./Client localhost test
-
-RUN: Server Proxy
-	./Server &
-	./Proxy localhost 30490 &
-
-Server: server.c tcp.c
-	$(CC) $(CCFLAGS) -o Server server.c tcp.c
-
-Proxy: proxy.c tcp.c
-	$(CC) $(CCFLAGS) -o Proxy proxy.c tcp.c
 
 UDP: udp.c
 	$(CC) $(CCFLAGS) -o UDP udp.c
