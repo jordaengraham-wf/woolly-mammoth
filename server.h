@@ -10,20 +10,39 @@
 #ifndef CMPT434_SERVER_H
 #define CMPT434_SERVER_H
 
+#include <arpa/inet.h>
+#include <ctype.h>
+#include <errno.h>
+#include <ifaddrs.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <pthread.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
 #include <string.h>
-#include <sys/types.h>
 #include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-#define MYPORT "30950"	// the port users will be connecting to
+struct tuples {
+    char *key;
+    char *value;
+};
 
-#define MAXBUFLEN 100
+struct nodes{
+    struct tuples* tuple;
+    struct nodes* next;
+};
 
+
+#define PORT "4951"    // the port users will be connecting to
+#define PROXYPORT "4952"    // the port users will be connecting to
+#define MAXDATASIZE 1000
+
+int start(char *port);
+int get_connections(int server_fd);
+char *recvTCPMessage(int client_fd);
+int sendTCPMessage(int client_fd, char *message);
 
 #endif //CMPT434_SERVER_H

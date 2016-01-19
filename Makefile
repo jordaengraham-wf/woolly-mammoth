@@ -18,18 +18,18 @@ clean:
 
 RUN: UDP Client
 	./UDP &
-	./Client localhost test
+	./Client &
 
 run_udp: UDP
 	./UDP
 
 run_client: Client
-	./Client localhost test
+	./Client
 
 UDP: udp.c
 	$(CC) $(CCFLAGS) -o UDP udp.c
 
-Client: client.c
-	$(CC) $(CCFLAGS) -o Client client.c
+Client: client.c tcp.c
+	$(CC) $(CCFLAGS) -o Client client.c tcp.c
 
 
