@@ -65,6 +65,7 @@ void *client_func(void *args){
         else if (strcmp(buffer, "abort") == 0) {
             break;
         }
+		printf("Buffer: %s\n", buffer);
 
         if ((sendto(server_fd, buffer, strlen(buffer),
                     0, servinfo->ai_addr, servinfo->ai_addrlen)) == -1) {
@@ -88,16 +89,19 @@ void *client_func(void *args){
                     perror("recvfrom");
                     exit(1);
                 }
+
+				printf("Reply: %s\n", buffer);
                 if (strcmp(buffer, "DONE") == 0)
                     break;
                 size = strlen(buffer)+2;
                 message = malloc(size * sizeof(char));
                 snprintf(message, size, "%s\n", buffer);
-                printf("Message: %s", message);
+				printf("Message: %s\n", message);
                 sendTCPMessage(client_fd, message);
                 free(buffer);
                 free(message);
             }
+			printf("Response: %s\n", buffer);
             free(buffer);
         } else {
             // get Response
@@ -112,6 +116,7 @@ void *client_func(void *args){
                 perror("recvfrom");
                 exit(1);
             }
+			printf("Response: %s\n", buffer);
             sendTCPMessage(client_fd, buffer);
             free(buffer);
         }

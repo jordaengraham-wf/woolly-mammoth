@@ -169,6 +169,7 @@ char *evaluate(char *buffer){
         snprintf(message, size, "Incorrect Call\n%s\n", usage);
     }
 
+	printf("Message: %s\n", message);
     return message;
 }
 
@@ -237,7 +238,7 @@ int main(void)
         }
 
         buf[numbytes] = '\0';
-
+		printf("Request: %s\n", buf);
         message = evaluate(buf);
         // Send back results
         if(sendto(sockfd, message, (size_t) strlen(message), flags, (struct sockaddr *)&their_addr, addr_len) == -1){ //

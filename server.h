@@ -36,8 +36,8 @@ struct nodes{
 };
 
 
-#define PORT "4951"    // the port users will be connecting to
-#define PROXYPORT "4952"    // the port users will be connecting to
+#define PORT "35951"    // the port users will be connecting to
+#define PROXYPORT "35952"    // the port users will be connecting to
 #define MAXDATASIZE 1000
 
 int start(char *port);
