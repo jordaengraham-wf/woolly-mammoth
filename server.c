@@ -19,6 +19,7 @@ char *usage = "\nUsage:\n\tadd key value : add (key, value) pair, if no existing
 
 
 char *add_value(char *key, char *value){
+
     struct nodes *node = malloc(sizeof(struct nodes));
     struct tuples *tuple = malloc(sizeof(struct tuples));
     if (key == NULL){
@@ -75,7 +76,6 @@ char *getall_values(){
         snprintf(temp, size, "%s\n%s: %s", result, cursor->tuple->key, cursor->tuple->value);
         cursor = cursor->next;
         result = temp;
-        free(temp);
     }
     if (strcmp(result, "") == 0) {
         result = "There are no values in the list";
@@ -143,7 +143,9 @@ void *server(void *args) {
 
 
         if (strcmp(arg, "add") == 0) {
-            message = add_value(strtok(NULL, " "), strtok(NULL, " "));
+			char *key = strtok(NULL, " ");
+			char *value = strtok(NULL, " ");
+            message = add_value(key, value);
         }
         else if (strcmp(arg, "getvalue") == 0) {
             message = get_value(strtok(NULL, " "));
