@@ -55,8 +55,7 @@ public class A3 extends Application {
         FileChooser fileChooser = new FileChooser();
 
         //Set extension filter
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-        fileChooser.getExtensionFilters().add(extFilter);
+        fileChooser.getExtensionFilters();
 
         //Show save file dialog
         File file = fileChooser.showSaveDialog(stage);
@@ -229,7 +228,7 @@ public class A3 extends Application {
         if (country != null) {
             country_label.setText(country.Name);
             description_area.setText(country.Description);
-            flag.setImage(new Image(String.format("assigment3/Flags/%s.png", country.Code.toLowerCase())));
+            flag.setImage(new Image(String.format("Flags/%s.png", country.Code.toLowerCase())));
         }
 
         listview.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -238,7 +237,7 @@ public class A3 extends Application {
                 message_log.appendText(String.format("Selected Country: %s\n", new_country.Name));
                 country_label.setText(new_country.Name);
                 description_area.setText(new_country.Description);
-                flag.setImage(new Image(String.format("assigment3/Flags/%s.png", new_country.Code.toLowerCase())));
+                flag.setImage(new Image(String.format("Flags/%s.png", new_country.Code.toLowerCase())));
             } else {
                 message_log.appendText("Selected Country: null\n");
             }

@@ -134,7 +134,7 @@ public class Country {
         countries[46] = new Country("SZ", "SWAZILAND", "AFRICA");
         countries[47] = new Country("TD", "CHAD", "AFRICA");
         countries[48] = new Country("TG", "TOGO", "AFRICA");
-        countries[49] = new Country("TN", "TUNISIA", "AFRICA");
+        countries[49] = new Country("TM", "TUNISIA", "AFRICA");
         countries[50] = new Country("TZ", "TANZANIA, UNITED REPUBLIC OF", "AFRICA");
         countries[51] = new Country("UG", "UGANDA", "AFRICA");
         countries[52] = new Country("ZA", "SOUTH AFRICA", "AFRICA");
