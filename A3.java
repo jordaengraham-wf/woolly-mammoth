@@ -19,7 +19,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-import javafx.scene.web.WebHistory;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 
@@ -28,7 +27,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-import assigment3.Country.Continents;
 
 public class A3 extends Application {
 
@@ -365,12 +363,12 @@ class MyCheckBox extends CheckBox {
 
     static public void create_hash_map() {
         instances = new HashMap<>();
-        instances.put(Continents.AFRICA.toString().toLowerCase(), true);
-        instances.put(Continents.ASIA.toString().toLowerCase(), true);
-        instances.put(Continents.NORTH_AMERICA.toString().toLowerCase().replace(" ", "_"), true);
-        instances.put(Continents.SOUTH_AMERICA.toString().toLowerCase().replace(" ", "_"), true);
-        instances.put(Continents.EUROPE.toString().toLowerCase(), true);
-        instances.put(Continents.AUSTRALIA.toString().toLowerCase(), true);
+        instances.put(Country.Continents.AFRICA.toString().toLowerCase(), true);
+        instances.put(Country.Continents.ASIA.toString().toLowerCase(), true);
+        instances.put(Country.Continents.NORTH_AMERICA.toString().toLowerCase().replace(" ", "_"), true);
+        instances.put(Country.Continents.SOUTH_AMERICA.toString().toLowerCase().replace(" ", "_"), true);
+        instances.put(Country.Continents.EUROPE.toString().toLowerCase(), true);
+        instances.put(Country.Continents.AUSTRALIA.toString().toLowerCase(), true);
     }
 
     static public void create_continents_lists() {
