@@ -290,12 +290,13 @@ class MyButton extends Button{
         HBox.setHgrow(this, Priority.ALWAYS);
         this.setOnAction(e -> {
             message_log.appendText(String.format("Selected Button: %s\n", name));
-            if (isSet())
+            if (isSet()) {
                 listview.getSelectionModel().select(name);
-            else
+                listview.scrollTo(name);
+            } else
                 message_log.appendText("Button is currently empty\n");
-
         });
+
         //Adding the shadow when the mouse cursor is on
         this.addEventHandler(MouseEvent.MOUSE_ENTERED,
                 event -> this.setEffect(shadow));
